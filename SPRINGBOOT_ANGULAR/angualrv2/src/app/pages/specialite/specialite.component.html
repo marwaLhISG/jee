@@ -1,0 +1,52 @@
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="d-inline p-2"><h4 class="card-title">liste des specialites</h4></div>
+          <div class="d-inline p-2"><button class="btn btn-success" (click)="Add()"><i class="fa fa-plus"></i> Ajouter Nouveau departement</button></div>
+        </div>
+      </div>
+      <div class="text-center" *ngIf="!specialites">
+        <div class="col">
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body" *ngIf="specialites">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              <th>
+                N°
+              </th>
+              <th>
+                Nom
+              </th>
+              <th>
+                  
+              </th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of specialites">
+                <td>
+                  {{item.idSpecialite}}
+                </td>
+                <td>
+                 {{item.libelleSpecialite}}
+                </td>
+                <td>
+                  <button class="btn btn-secondary" (click)="Edit(item.idSpecialite)"><i class="fa fa-edit"></i>Modifier</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  

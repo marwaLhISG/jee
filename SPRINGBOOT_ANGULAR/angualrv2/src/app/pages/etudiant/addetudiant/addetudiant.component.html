@@ -1,0 +1,44 @@
+
+<!--Big blue-->  
+  <div class="row align-items-center">
+    <div class="col card">
+      <div class="card-header">
+        <h2>Ajouter un etudiant</h2>
+      </div>
+      <div class="card-body">
+        <form class="row g-3" #LoginForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="etudiant">
+          <div class="col-md-6">
+            <label for="nomE" class="form-label">Nom</label>
+            <input class="form-control" type="text" name="nomE" id="nomE" [(ngModel)]="etudiant.nomE">
+          </div>
+          <div class="col-md-6">
+            <label for="dateEntree" class="form-label">Date entrée</label>
+            <input class="form-control" type="text" name="dateEntree" id="dateEntree" [(ngModel)]="etudiant.dateEntree">
+          </div>
+          <div class="col-12">
+            <label for="niveau" class="form-label">Niveau</label>
+            <input class="form-control" type="text" name="niveau" id="niveau" [(ngModel)]="etudiant.niveau">
+          </div>
+          <div class="col-12">
+            <label for="moyenne" class="form-label">Moyenne</label>
+            <input class="form-control" type="text" name="moyenne" id="moyenne" [(ngModel)]="etudiant.moyenne">
+          </div>
+          <div class="col-6">
+            <label for="moyenne" class="form-label">Moyenne</label>
+            <select class="form-control">
+              <option [ngValue]="null" disabled>choisir departement</option>
+              <option *ngFor="let item of departements" [ngValue]="item.idDepartement">
+               {{item.nomDepartement}}
+              </option>
+            </select> 
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+          </div>
+      </form>
+      </div>
+  
+    </div>
+  
+  </div>
+  

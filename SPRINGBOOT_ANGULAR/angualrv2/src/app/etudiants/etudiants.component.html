@@ -1,0 +1,19 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Moyen</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let item of etudiants">
+            <td>{{item.numE}}</td>
+            <td>{{item.nomE}}</td>
+            <td>{{item.moyenne}}</td>
+            <td>{{item.numE}}</td>
+            <td><button class="btn btn-success btn-sm" (click)="update(item.nomE)"><i class="fa fa-edit"></i>Modifier</button></td>
+        </tr>
+    </tbody>
+  </table>

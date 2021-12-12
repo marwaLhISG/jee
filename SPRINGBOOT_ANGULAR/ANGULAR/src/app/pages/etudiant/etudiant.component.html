@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="d-inline p-2"><h4 class="card-title">liste des etudiants</h4></div>
+            <div class="d-inline p-2"><button class="btn btn-success" (click)="Add()"><i class="fa fa-plus"></i> Ajouter Nouveau Etudiant</button></div>
+            <div class="d-inline p-2"><button class="btn btn-secondary" (click)="ngOnInit()" [disabled]="button"><i class="fa fa-refresh"></i> Refresh</button></div>
+          </div>
+        </div>
+        <div class="text-center" *ngIf="!etudiants">
+          <div class="col">
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body" *ngIf="etudiants">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>
+                  N°
+                </th>
+                <th>
+                  Nom
+                </th>
+                <th>
+                  Date entré
+                </th>
+                <th class="text-right">
+                  Moyenne
+                </th>
+                <th class="text-right">
+                    Niveau
+                </th>
+                <th>
+                    
+                </th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of etudiants">
+                  <td>
+                    {{item.numE}}
+                  </td>
+                  <td>
+                   {{item.nomE}}
+                  </td>
+                  <td>
+                    {{item.dateEntree}}
+                  </td>
+                  <td class="text-right">
+                    {{item.moyenne}}
+                  </td>
+                  <td class="text-right">
+                    {{item.niveau}}
+                  </td>
+                  <td>
+                      <button class="btn text-dark btn-sm" style="margin-right: 2px; background-color: lightgray;" (click)="Edit(item.numE)"><i class="fa fa-edit"></i></button>
+                      <button class="btn text-dark btn-sm" style="background-color:lightgray;"><i class="nc-icon nc-simple-remove"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+    

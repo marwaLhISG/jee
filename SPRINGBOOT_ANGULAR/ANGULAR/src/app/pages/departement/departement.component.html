@@ -1,0 +1,43 @@
+<div class="spinner-border" role="status" *ngIf="!departements">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="row">
+    <div class="col-md-12">
+      <div class="card card-plain">
+        <div class="card-header">
+          <h4 class="card-title">Liste des Departements</h4>
+        </div>
+        <div class="card-body" *ngIf="departements">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>
+                  N°
+                </th>
+                <th>
+                  Nom departement
+                </th>
+                <th>  
+                </th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of departements">
+                  <td>
+                    {{item.idDepartement}}
+                  </td>
+                  <td>
+                   {{item.nomDepartement}}
+                  </td>
+                  <td>
+                      <button style="margin-right: 2px; padding: 10px;" class="btn btn-success" (click)="Edit(item.idDepartement)"><i class="nc-icon nc-tag-content"></i></button>
+                      <button style="margin-right: 2px; padding: 10px;" class="btn btn-warning"><i class="nc-icon nc-simple-remove"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+    
